@@ -54,7 +54,8 @@ public class Main {
                 new SystemTimeProvider(),
                 new SystemSleeper()
         );
-
+        
+        System.out.println("Mouse-keeper va te tenir éveillé de " + start + " à " + end);
         useCase.runUntil(end, 30_000);
     }
 
