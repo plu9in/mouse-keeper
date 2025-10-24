@@ -17,6 +17,7 @@ public class RobotMouseController implements MouseController {
 
     @Override
     public void moveBy(int dx, int dy) {
+        System.out.println("Moving mouse by (" + dx + ", " + dy + ")");
         PointerInfo info = MouseInfo.getPointerInfo();
         Point p = info.getLocation();
         robot.mouseMove(p.x + dx, p.y + dy);
