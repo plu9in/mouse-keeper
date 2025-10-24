@@ -1,5 +1,6 @@
 plugins {
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -27,5 +28,9 @@ tasks.test {
 application {
     // Point d’entrée de ton CLI
     mainClass.set("com.samoukh.mousekeeper.adapters.cli.Main")
+}
+
+tasks.withType<JavaCompile>().configureEach {
+  options.release = 17 // bytecode compatible Java 17
 }
 
