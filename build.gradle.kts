@@ -34,3 +34,13 @@ tasks.withType<JavaCompile>().configureEach {
   options.release = 17 // bytecode compatible Java 17
 }
 
+tasks.register<Copy>("copyJar") {
+    dependsOn("shadowJar") // ou "jar" si tu n'utilises pas shadow
+    from(layout.buildDirectory.dir("libs"))
+    include("*.jar")
+    into(layout.projectDirectory)
+}
+
+tasks.build {
+    finalizedBy("copyJar")
+}
