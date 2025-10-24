@@ -23,8 +23,7 @@ public class Main {
 
         LocalDateTime start = now;
         LocalDateTime end = LocalDateTime.of(start.getYear(), start.getMonth(), start.getDayOfMonth(), 18, 20, 0);
-        // LocalDateTime end   = now.plusHours(1);
-
+       
         try {
             if (args.length == 1) {
                 // un seul argument = heure de fin
@@ -57,6 +56,7 @@ public class Main {
         
         System.out.println("Mouse-keeper va te tenir éveillé de " + start + " à " + end);
         useCase.runUntil(end, 30_000);
+        System.out.println(end + "-- Fin de service -- Tu peux dormir maintenant !");   
     }
 
     private static LocalDateTime parseFlexible(String s, LocalDateTime now) {
