@@ -56,7 +56,7 @@ public class Main {
         
         System.out.println("Mouse-keeper va te tenir éveillé de " + start + " à " + end);
         useCase.runUntil(end, 30_000);
-        System.out.println(end + "-- Fin de service -- Tu peux dormir maintenant !");   
+        System.out.println(end + " -- Fin de service -- Tu peux dormir maintenant !");   
     }
 
     private static LocalDateTime parseFlexible(String s, LocalDateTime now) {
