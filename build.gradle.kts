@@ -31,7 +31,7 @@ application {
 }
 
 tasks.withType<JavaCompile>().configureEach {
-  options.release = 17 // bytecode compatible Java 17
+  options.release.set(8)
 }
 
 tasks.register<Copy>("copyJar") {
