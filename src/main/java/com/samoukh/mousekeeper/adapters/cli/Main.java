@@ -60,6 +60,7 @@ public class Main {
         // 3) essai "HH"
         try {
             int hour = Integer.parseInt(input);
+            System.out.println("Heure fournie: " + hour);
             if (hour < 0 || hour > 23) throw new NumberFormatException();
             return approxAtHour(LocalTime.of(hour, 0), now, fuzzMinutes);
         } catch (NumberFormatException ignored) {}
@@ -68,7 +69,7 @@ public class Main {
                 " (use 'yyyy-MM-dd HH:mm:ss', 'HH:mm' or 'HH')");
     }
 
-    /** Prochaine occurrence de l’heure cible (aujourd’hui si pas passée, sinon demain) + jitter ±fuzzMinutes */
+    /** Prochaine occurrence de l’heure cible + jitter ±fuzzMinutes */
     private static LocalDateTime approxAtHour(LocalTime target, LocalDateTime now, int fuzzMinutes) {
         LocalDate date = now.toLocalDate();
         LocalDateTime candidate = LocalDateTime.of(date, target);
