@@ -37,7 +37,7 @@ tasks.withType<JavaCompile>().configureEach {
 tasks.register<Copy>("copyJar") {
     dependsOn("shadowJar") // ou "jar" si tu n'utilises pas shadow
     from(layout.buildDirectory.dir("libs"))
-    include("*.jar")
+    include("*-all.jar")
     into(layout.projectDirectory)
 }
 

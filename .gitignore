@@ -2,4 +2,4 @@ build/
 bin/
 gradle/
 gradlew
-.gradle/
+.gradle/*
